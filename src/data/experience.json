@@ -9,12 +9,14 @@
     "type": "full-time",
     "description": "Leading performance marketing initiatives and AI-driven automation systems. Developed sales agents and workflow automation tools that increased conversion rates by 40%. Responsible for managing multi-channel campaigns across Google Ads, Facebook Ads, and LinkedIn while implementing advanced analytics and attribution modeling.",
     "technologies": ["Mikrotik", "AI/ML", "CRM", "Cloud Server", "Database", "Automation", "Microsoft", "Google Workspace", "API Integration"],
-    "achievements": [
-      "Increased conversion rates by 40% through AI-driven optimization",
-      "Built automated sales agent system processing 1000+ leads daily",
-      "Reduced manual workflow time by 60% through custom automation",
-      "Managed $500K+ monthly ad spend across multiple channels",
-      "Implemented advanced attribution modeling increasing ROAS by 25%"
+    "responsibility": [
+      "Manage and maintain network infrastructure using Mikrotik systems",
+      "Develop and implement AI/ML solutions for business automation",
+      "Oversee CRM systems and database management for lead processing",
+      "Administer cloud servers and ensure system security and performance",
+      "Create automated workflows for sales and marketing processes",
+      "Manage Microsoft and Google Workspace environments for team collaboration",
+      "Integrate APIs between different business systems and platforms"
     ]
   },
   {
@@ -27,12 +29,14 @@
     "type": "freelance",
     "description": "Bridged IT infrastructure with marketing operations, implementing data-driven solutions and performance tracking systems. Developed custom integrations between marketing platforms and internal systems, while maintaining server infrastructure and ensuring data security compliance.",
     "technologies": ["Google Ads", "Google Analytics", "WordPress", "CRM Systems", "API Integration", "Linux", "Docker"],
-    "achievements": [
-      "Implemented comprehensive analytics tracking system",
-      "Integrated multiple marketing platforms via APIs",
-      "Improved data accuracy by 85% through automated reporting",
-      "Reduced server costs by 30% through infrastructure optimization",
-      "Built real-time dashboard for campaign performance monitoring"
+    "responsibility": [
+      "Optimize website SEO performance and search engine rankings",
+      "Manage Google Ads campaigns and budget allocation",
+      "Implement and maintain Google Analytics tracking systems",
+      "Develop and maintain WordPress websites and content management",
+      "Integrate CRM systems with marketing platforms for lead tracking",
+      "Manage Linux servers and Docker containerization for web applications",
+      "Create API integrations between different marketing and business tools"
     ]
   },
   {
@@ -45,12 +49,14 @@
     "type": "freelance",
     "description": "Provided specialized consulting services for small to medium businesses looking to optimize their marketing technology stack. Focused on automation, analytics implementation, and performance optimization across various industries including e-commerce, SaaS, and professional services.",
     "technologies": ["HubSpot", "Zapier", "Google Analytics", "WordPress", "Shopify", "Email Marketing"],
-    "achievements": [
-      "Helped 15+ businesses optimize their marketing funnels",
-      "Implemented marketing automation saving clients 20+ hours/week",
-      "Increased average client lead generation by 150%",
-      "Built custom tracking solutions for e-commerce clients",
-      "Delivered ROI improvements averaging 200% across all projects"
+    "responsibility": [
+      "Provide IT consulting services for small to medium businesses",
+      "Design and implement marketing technology stack solutions",
+      "Configure HubSpot CRM and automation workflows for clients",
+      "Set up Zapier integrations for business process automation",
+      "Implement Google Analytics and conversion tracking systems",
+      "Develop custom WordPress solutions and e-commerce platforms",
+      "Design and execute email marketing campaigns and automation sequences"
     ]
   }
 ]

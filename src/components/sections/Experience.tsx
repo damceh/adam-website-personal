@@ -77,14 +77,29 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
                         </div>
                       )}
 
-                      {/* Achievements */}
+                      {/* Responsibilities */}
+                      {exp.responsibility && exp.responsibility.length > 0 && (
+                        <div className="mt-4">
+                          <h4 className="text-sm font-medium text-slate-200 mb-2">Key Responsibilities:</h4>
+                          <ul className="space-y-1">
+                            {exp.responsibility.map((task, idx) => (
+                              <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
+                                <span className="text-slate-500 mt-1.5 flex-shrink-0">•</span>
+                                <span>{task}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Achievements (for future use) */}
                       {exp.achievements && exp.achievements.length > 0 && (
                         <div className="mt-4">
                           <h4 className="text-sm font-medium text-slate-200 mb-2">Key Achievements:</h4>
                           <ul className="space-y-1">
                             {exp.achievements.map((achievement, idx) => (
                               <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                                <span className="text-slate-500 mt-1.5 flex-shrink-0">•</span>
+                                <span className="text-green-500 mt-1.5 flex-shrink-0">★</span>
                                 <span>{achievement}</span>
                               </li>
                             ))}

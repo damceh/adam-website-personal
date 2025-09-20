@@ -26,7 +26,8 @@ export interface Experience {
   type: 'full-time' | 'part-time' | 'contract' | 'freelance';
   description: string;
   technologies: string[];
-  achievements: string[];
+  responsibility: string[];
+  achievements?: string[]; // Optional for future use
 }
 
 export interface Project {
