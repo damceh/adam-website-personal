@@ -1,7 +1,164 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Enable experimental features
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // Image optimization
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1 year
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+
+  // Security headers
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'origin-when-cross-origin',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=()',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' web3forms.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https: blob:",
+              "font-src 'self' data:",
+              "connect-src 'self' web3forms.com api.web3forms.com",
+              "frame-src 'none'",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self' web3forms.com",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
+        ],
+      },
+    ];
+  },
+
+  // Redirects for SEO
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
+  
+  // Bundle analyzer (only in development)
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config: any) => {
+      config.plugins.push(
+        new (require('@next/bundle-analyzer'))({
+          enabled: true,
+        })
+      );
+      return config;
+    },
+  }),
+
+  // Environment variables validation
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+
+  // Output configuration for static export (if needed)
+  output: process.env.BUILD_STANDALONE === 'true' ? 'standalone' : undefined,
+
+  // Webpack configuration
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle size
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            enforce: true,
+          },
+        },
+      };
+    }
+
+    // SVG handling
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
+
+  // TypeScript configuration
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // ESLint configuration
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Trailing slash configuration
+  trailingSlash: false,
+
+  // Page extensions
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
+
+  // React strict mode
+  reactStrictMode: true,
+
+  // SWC minification
+  swcMinify: true,
 };
 
 export default nextConfig;

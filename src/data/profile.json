@@ -1,0 +1,35 @@
+{
+  "name": "Adam Almahdi",
+  "title": "IT & AI Automation Engineer",
+  "description": "I blend my background in IT with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic. ⚡",
+  "image": "/images/profile.jpg",
+  "location": "Based in Bali, Indonesia",
+  "email": "hello@adamalmahdi.com",
+  "resume": "/resume.pdf",
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/adamalmahdi",
+      "icon": "Linkedin",
+      "color": "#0077B5"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/adamalmahdi",
+      "icon": "Github",
+      "color": "#333333"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/adamalmahdi",
+      "icon": "Twitter",
+      "color": "#1DA1F2"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/adamalmahdi",
+      "icon": "Instagram",
+      "color": "#E4405F"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "project-1",
+    "title": "AI Sales Agent Platform",
+    "description": "Intelligent sales automation system with natural language processing and lead qualification.",
+    "longDescription": "A comprehensive AI-powered sales agent platform that automates lead qualification, follow-ups, and conversion tracking. Built with modern web technologies and integrated with multiple CRM systems. Features include intelligent conversation flows, sentiment analysis, and predictive lead scoring.",
+    "image": "/images/projects/ai-sales-agent.jpg",
+    "technologies": ["Next.js", "Python", "OpenAI API", "PostgreSQL", "Tailwind CSS", "FastAPI", "Redis"],
+    "githubUrl": "https://github.com/adamalmahdi/ai-sales-agent",
+    "demoUrl": "https://ai-sales-demo.adamalmahdi.com",
+    "featured": true,
+    "status": "completed",
+    "category": "AI/Automation"
+  },
+  {
+    "id": "project-2",
+    "title": "Workflow Automation Suite",
+    "description": "Custom automation tools for marketing workflows and data processing.",
+    "longDescription": "A comprehensive suite of automation tools designed to streamline marketing workflows, data processing, and reporting. Features a drag-and-drop workflow builder, real-time monitoring, and integration with 50+ marketing platforms. Reduces manual work by up to 80% for marketing teams.",
+    "image": "/images/projects/automation-suite.jpg",
+    "technologies": ["React", "Node.js", "MongoDB", "Redis", "Docker", "Kubernetes", "GraphQL"],
+    "githubUrl": "https://github.com/adamalmahdi/workflow-automation",
+    "demoUrl": "https://automation-demo.adamalmahdi.com",
+    "featured": true,
+    "status": "completed",
+    "category": "Automation"
+  },
+  {
+    "id": "project-3",
+    "title": "Performance Analytics Dashboard",
+    "description": "Real-time marketing performance tracking and visualization platform.",
+    "longDescription": "A comprehensive analytics dashboard that aggregates data from multiple marketing platforms and provides real-time insights with customizable visualizations. Features advanced reporting, automated alerts, and predictive analytics to help businesses optimize their marketing performance.",
+    "image": "/images/projects/analytics-dashboard.jpg",
+    "technologies": ["Vue.js", "D3.js", "Express.js", "MySQL", "Chart.js", "WebSocket", "Python"],
+    "githubUrl": "https://github.com/adamalmahdi/analytics-dashboard",
+    "demoUrl": "https://analytics-demo.adamalmahdi.com",
+    "featured": false,
+    "status": "completed",
+    "category": "Analytics"
+  },
+  {
+    "id": "project-4",
+    "title": "E-commerce Optimization Engine",
+    "description": "AI-powered tool for optimizing e-commerce conversion rates and user experience.",
+    "longDescription": "An intelligent optimization engine that uses machine learning to analyze user behavior, A/B test variations, and automatically implement improvements to increase conversion rates. Integrates with major e-commerce platforms and provides actionable insights for store owners.",
+    "image": "/images/projects/ecommerce-optimizer.jpg",
+    "technologies": ["Python", "TensorFlow", "Django", "PostgreSQL", "Celery", "AWS", "Stripe API"],
+    "githubUrl": "https://github.com/adamalmahdi/ecommerce-optimizer",
+    "featured": false,
+    "status": "in-progress",
+    "category": "E-commerce"
+  },
+  {
+    "id": "project-5",
+    "title": "Social Media Content Generator",
+    "description": "AI-powered content creation tool for social media marketing campaigns.",
+    "longDescription": "An innovative content generation platform that uses advanced AI models to create engaging social media content, captions, and hashtags. Features brand voice customization, content scheduling, and performance analytics to help businesses maintain consistent social media presence.",
+    "image": "/images/projects/content-generator.jpg",
+    "technologies": ["Next.js", "OpenAI API", "Supabase", "Vercel", "Tailwind CSS", "Framer Motion"],
+    "githubUrl": "https://github.com/adamalmahdi/content-generator",
+    "demoUrl": "https://content-gen.adamalmahdi.com",
+    "featured": false,
+    "status": "completed",
+    "category": "Content Marketing"
+  },
+  {
+    "id": "project-6",
+    "title": "Personal Brand Website",
+    "description": "Dark gothic portfolio website showcasing technical expertise and creative vision.",
+    "longDescription": "A stunning personal portfolio website built with Next.js 15 and featuring a dark gothic aesthetic. Includes atmospheric visual effects, smooth animations, and optimized performance. Showcases the perfect blend of technical expertise and creative design vision.",
+    "image": "/images/projects/portfolio-website.jpg",
+    "technologies": ["Next.js 15", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
+    "githubUrl": "https://github.com/adamalmahdi/portfolio",
+    "demoUrl": "https://adamalmahdi.com",
+    "featured": true,
+    "status": "completed",
+    "category": "Web Development"
+  }
+]

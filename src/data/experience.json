@@ -1,0 +1,56 @@
+[
+  {
+    "id": "exp-1",
+    "company": "TechCorp Solutions",
+    "logo": "/images/companies/techcorp.png",
+    "position": "Senior Performance Marketing Manager",
+    "period": "May 2023 - Present",
+    "location": "Remote",
+    "type": "full-time",
+    "description": "Leading performance marketing initiatives and AI-driven automation systems. Developed sales agents and workflow automation tools that increased conversion rates by 40%. Responsible for managing multi-channel campaigns across Google Ads, Facebook Ads, and LinkedIn while implementing advanced analytics and attribution modeling.",
+    "technologies": ["Python", "AI/ML", "Google Ads", "Facebook Ads", "Analytics", "Automation", "SQL", "JavaScript"],
+    "achievements": [
+      "Increased conversion rates by 40% through AI-driven optimization",
+      "Built automated sales agent system processing 1000+ leads daily",
+      "Reduced manual workflow time by 60% through custom automation",
+      "Managed $500K+ monthly ad spend across multiple channels",
+      "Implemented advanced attribution modeling increasing ROAS by 25%"
+    ]
+  },
+  {
+    "id": "exp-2",
+    "company": "Digital Marketing Agency",
+    "logo": "/images/companies/dma.png",
+    "position": "IT Specialist & Marketing Analyst",
+    "period": "Jan 2022 - Apr 2023",
+    "location": "Hybrid",
+    "type": "full-time",
+    "description": "Bridged IT infrastructure with marketing operations, implementing data-driven solutions and performance tracking systems. Developed custom integrations between marketing platforms and internal systems, while maintaining server infrastructure and ensuring data security compliance.",
+    "technologies": ["JavaScript", "SQL", "Google Analytics", "CRM Systems", "API Integration", "Linux", "Docker"],
+    "achievements": [
+      "Implemented comprehensive analytics tracking system",
+      "Integrated multiple marketing platforms via APIs",
+      "Improved data accuracy by 85% through automated reporting",
+      "Reduced server costs by 30% through infrastructure optimization",
+      "Built real-time dashboard for campaign performance monitoring"
+    ]
+  },
+  {
+    "id": "exp-3",
+    "company": "Freelance Consulting",
+    "logo": "/images/companies/freelance.png",
+    "position": "Marketing Technology Consultant",
+    "period": "Jun 2021 - Dec 2021",
+    "location": "Remote",
+    "type": "freelance",
+    "description": "Provided specialized consulting services for small to medium businesses looking to optimize their marketing technology stack. Focused on automation, analytics implementation, and performance optimization across various industries including e-commerce, SaaS, and professional services.",
+    "technologies": ["HubSpot", "Zapier", "Google Analytics", "WordPress", "Shopify", "Email Marketing"],
+    "achievements": [
+      "Helped 15+ businesses optimize their marketing funnels",
+      "Implemented marketing automation saving clients 20+ hours/week",
+      "Increased average client lead generation by 150%",
+      "Built custom tracking solutions for e-commerce clients",
+      "Delivered ROI improvements averaging 200% across all projects"
+    ]
+  }
+]
