@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Loader2, MapPin } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -71,46 +71,22 @@ export function ContactSection({ className }: ContactProps) {
     try {
       const sanitizedData = sanitizeFormData(contactForm);
       
-      // Submit to Web3Forms
-      const formData = new FormData();
-      formData.append('access_key', process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '');
-      formData.append('name', sanitizedData.name);
-      formData.append('email', sanitizedData.email);
-      formData.append('subject', sanitizedData.subject || 'Portfolio Contact');
-      formData.append('message', sanitizedData.message);
-      formData.append('from_name', sanitizedData.name);
-      formData.append('from_email', sanitizedData.email);
-
-      const response = await fetch('https://api.web3forms.com/submit', {
+      console.log('Submitting form via API route...');
+      
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        body: formData
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(sanitizedData)
       });
 
       const result = await response.json();
+      console.log('API response:', result);
 
       if (result.success) {
         setSubmitStatus('success');
         setContactForm({ name: '', email: '', subject: '', message: '', honeypot: '' });
-        
-        // Send to webhook if configured
-        if (process.env.WEBHOOK_URL) {
-          try {
-            await fetch(process.env.WEBHOOK_URL, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                type: 'contact_form',
-                data: sanitizedData,
-                timestamp: new Date().toISOString()
-              })
-            });
-          } catch (webhookError) {
-            console.error('Webhook error:', webhookError);
-            // Don't fail the form submission if webhook fails
-          }
-        }
       } else {
         throw new Error(result.message || 'Failed to send message');
       }
@@ -149,7 +125,7 @@ export function ContactSection({ className }: ContactProps) {
                   animate={{ opacity: 1, scale: 1 }}
                   className="mb-6 p-4 bg-green-900/30 border border-green-700 rounded-lg text-green-300 text-center"
                 >
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I&apos;ll get back to you soon.
                 </motion.div>
               )}
 

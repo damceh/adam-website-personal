@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Github, 
@@ -9,7 +9,6 @@ import {
   Instagram,
   User
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { Profile } from '@/types';
 
 const socialIcons = {
@@ -24,18 +23,18 @@ interface HeroProps {
   className?: string;
 }
 
-export function Hero({ profile, className }: HeroProps) {
+export function Hero({ profile }: HeroProps) {
   const [currentTitle, setCurrentTitle] = useState('');
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const titles = [
+  const titles = useMemo(() => [
     "IT Network Engineer × AI Automation Enthusiast",
     "Network Infrastructure Architect", 
     "DevOps & Automation Specialist",
     "AI-Powered Solutions Developer"
-  ];
+  ], []);
 
   // Typewriter effect
   useEffect(() => {

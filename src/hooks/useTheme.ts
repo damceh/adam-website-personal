@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useContext, createContext, ReactNode } from 'react';
+import React, { useState, useEffect, useContext, createContext, ReactNode, useCallback } from 'react';
 import { ThemeContextType } from '@/types';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -14,7 +14,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
   const [mounted, setMounted] = useState(false);
 
   // Get the resolved theme (actual theme being used)
-  const getResolvedTheme = (): 'light' | 'dark' => {
+  const getResolvedTheme = useCallback((): 'light' | 'dark' => {
     if (theme === 'system') {
       if (typeof window !== 'undefined') {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -22,14 +22,14 @@ export function ThemeProvider(props: ThemeProviderProps) {
       return 'dark'; // Default to dark for SSR
     }
     return theme;
-  };
+  }, [theme]);
 
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('dark');
 
   // Update resolved theme when theme changes or system preference changes
   useEffect(() => {
     setResolvedTheme(getResolvedTheme());
-  }, [theme]);
+  }, [theme, getResolvedTheme]);
 
   // Listen for system theme changes
   useEffect(() => {
@@ -40,7 +40,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
     }
-  }, [theme]);
+  }, [theme, getResolvedTheme]);
 
   // Load theme from localStorage on mount
   useEffect(() => {

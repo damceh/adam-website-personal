@@ -3,14 +3,15 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   // Enable experimental features
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  },
+
+  // Turbopack configuration
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },
@@ -156,9 +157,6 @@ const nextConfig: NextConfig = {
 
   // React strict mode
   reactStrictMode: true,
-
-  // SWC minification
-  swcMinify: true,
 };
 
 export default nextConfig;

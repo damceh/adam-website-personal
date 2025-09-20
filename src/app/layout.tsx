@@ -16,6 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://adamalmahdi.com'),
   title: "Adam Almahdi",
   description: "I blend my background in IT and performance marketing with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
   keywords: [
