@@ -2,7 +2,7 @@
   {
     "id": "exp-1",
     "company": "TARYAN GROUP",
-    "logo": "/images/companies/techcorp.png",
+    "logo": "/images/companies/taryan-logo.png",
     "position": "IT Administrator",
     "period": "June 2024 - Present",
     "location": "Bali, Indonesia",
@@ -22,7 +22,7 @@
   {
     "id": "exp-2",
     "company": "AMO World",
-    "logo": "/images/companies/dma.png",
+    "logo": "/images/companies/amo-world-logo.png",
     "position": "SEO Specialist",
     "period": "Jan 2024 - Present",
     "location": "Remote",
@@ -42,7 +42,7 @@
   {
     "id": "exp-3",
     "company": "Hi-Human Group",
-    "logo": "/images/companies/freelance.png",
+    "logo": "/images/companies/hihuman-logo.jpeg",
     "position": "IT Remote Solutions Architect",
     "period": "Jun 2021 - Dec 2021",
     "location": "Remote",
@@ -52,11 +52,71 @@
     "responsibility": [
       "Provide IT consulting services for small to medium businesses",
       "Design and implement marketing technology stack solutions",
-      "Configure HubSpot CRM and automation workflows for clients",
+      "Configure CRM and automation workflows for clients",
       "Set up Zapier integrations for business process automation",
       "Implement Google Analytics and conversion tracking systems",
       "Develop custom WordPress solutions and e-commerce platforms",
       "Design and execute email marketing campaigns and automation sequences"
+    ]
+  },
+  {
+    "id": "exp-4",
+    "company": "SETTER Co-Working Space",
+    "logo": "/images/companies/setter-logo.png",
+    "position": "IT Manager",
+    "period": "Aug 2023 - Jun 2024",
+    "location": "Bali, Indonesia",
+    "type": "full-time",
+    "description": "Managed IT infrastructure and systems for a modern co-working space environment. Oversaw network operations, member management systems, and technology services to ensure seamless connectivity and operational efficiency.",
+    "technologies": ["Mikrotik", "Unifi", "Nexudus CMS", "Webflow", "CRM", "NMS", "KaaS"],
+    "responsibility": [
+      "Manage and maintain network infrastructure using Mikrotik and Unifi systems",
+      "Administer Nexudus CMS for member management and billing operations",
+      "Develop and maintain company website using Webflow",
+      "Implement and oversee CRM systems for member relationship management",
+      "Manage Network Management Systems (NMS) for monitoring and troubleshooting",
+      "Administer KaaS (Keyboard as a Service) solutions for members",
+      "Provide IT support and technical assistance to co-working space members"
+    ]
+  },
+  {
+    "id": "exp-5",
+    "company": "Red Cubic Technology",
+    "logo": "/images/companies/redcubic-logo.png",
+    "position": "IT Supervisor",
+    "period": "Nov 2021 - Aug 2023",
+    "location": "Bali, Indonesia",
+    "type": "full-time",
+    "description": "Supervised IT operations and network infrastructure for technology solutions provider. Led implementation of various IT systems and managed technical teams to deliver reliable technology services.",
+    "technologies": ["Mikrotik", "WordPress", "PowerPro", "VHP", "Hikvision", "Network Infrastructure"],
+    "responsibility": [
+      "Supervise IT team and coordinate network infrastructure projects",
+      "Implement and manage Mikrotik-based network solutions",
+      "Develop and maintain WordPress websites for clients",
+      "Administer PowerPro and VHP systems for business operations",
+      "Deploy and manage Hikvision security and surveillance systems",
+      "Design and implement comprehensive network infrastructure solutions",
+      "Provide technical leadership and mentorship to IT staff"
+    ]
+  },
+  {
+    "id": "exp-6",
+    "company": "PT. Solusindo Bintang Pratama Network",
+    "logo": "/images/companies/solusindo-logo.png",
+    "position": "Help Desk Support",
+    "period": "Oct 2020 - Aug 2023",
+    "location": "Bali, Indonesia",
+    "type": "full-time",
+    "description": "Provided technical support and troubleshooting services for network infrastructure clients. Assisted with network configuration, system maintenance, and customer technical issues across various enterprise environments.",
+    "technologies": ["Mikrotik", "Cisco", "Solar Winds", "CRM"],
+    "responsibility": [
+      "Provide first-level technical support and troubleshooting assistance",
+      "Configure and maintain Mikrotik and Cisco network equipment",
+      "Utilize Solar Winds for network monitoring and performance management",
+      "Manage customer relationships through CRM systems",
+      "Document technical solutions and create knowledge base articles",
+      "Assist with network installation and configuration projects",
+      "Coordinate with senior technical staff for complex issue resolution"
     ]
   }
 ]

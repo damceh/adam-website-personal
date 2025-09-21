@@ -37,8 +37,16 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
               <Card className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-all duration-300 card-hover">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0">
-                      <div className="w-8 h-8 bg-slate-500 rounded"></div>
+                    <div className="w-16 h-16 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      {exp.logo ? (
+                        <img 
+                          src={exp.logo} 
+                          alt={`${exp.company} logo`}
+                          className="w-full h-full object-contain p-2"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 bg-slate-500 rounded"></div>
+                      )}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
