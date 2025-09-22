@@ -77,7 +77,13 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -102,6 +108,41 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Touch optimization for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Larger touch targets on mobile */
+  button, a, input, textarea {
+    min-height: 44px;
+  }
+
+  /* Reduce hover effects on touch devices */
+  .card-hover:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Ensure animations still work on mobile */
+  * {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Force GPU acceleration for smoother animations */
+  .motion-safe *[style*="opacity"],
+  .motion-safe *[style*="transform"] {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 }
 
 /* Focus styles for accessibility */

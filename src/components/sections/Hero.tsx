@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
+import {
+  Github,
+  Linkedin,
+  Twitter,
   Instagram,
   User
 } from 'lucide-react';
@@ -72,7 +72,7 @@ export function Hero({ profile }: HeroProps) {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <motion.section 
+        <motion.section
           className="min-h-screen flex items-center justify-center px-6 py-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -85,15 +85,15 @@ export function Hero({ profile }: HeroProps) {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 p-1 shadow-2xl">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-slate-700 to-slate-800 p-1 shadow-2xl">
                 <div className="w-full h-full rounded-full bg-slate-600 flex items-center justify-center overflow-hidden">
-                  <User className="w-20 h-20 text-slate-300" />
+                  <User className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 text-slate-300" />
                 </div>
               </div>
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent leading-tight"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -105,30 +105,30 @@ export function Hero({ profile }: HeroProps) {
             </motion.h1>
 
             <motion.div
-              className="mb-12 max-w-3xl mx-auto"
+              className="mb-8 sm:mb-10 md:mb-12 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-0"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
-              <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed text-center">
                 {profile.description}
               </p>
             </motion.div>
 
             <motion.div
-              className="h-16 mb-8"
+              className="h-12 sm:h-14 md:h-16 mb-6 sm:mb-8 px-4 sm:px-0"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.6 }}
             >
-              <p className="text-xl md:text-2xl text-slate-300 font-light">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-slate-300 font-light text-center">
                 {currentTitle}
                 <span className="animate-pulse">|</span>
               </p>
             </motion.div>
 
             <motion.div
-              className="flex justify-center space-x-6"
+              className="flex justify-center space-x-3 sm:space-x-4 md:space-x-6"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.6 }}
@@ -142,14 +142,14 @@ export function Hero({ profile }: HeroProps) {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-slate-800/50 border border-slate-700 hover:bg-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:scale-110"
+                    className="p-2 sm:p-3 rounded-full bg-slate-800/50 border border-slate-700 hover:bg-slate-700/50 hover:border-slate-600 transition-all duration-300 hover:scale-110 touch-manipulation"
                     whileHover={{ y: -2 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.1 + index * 0.1 }}
                     aria-label={`Visit ${social.platform} profile`}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                   </motion.a>
                 );
               })}

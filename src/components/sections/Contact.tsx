@@ -151,7 +151,7 @@ export function ContactSection({ className }: ContactProps) {
                   autoComplete="off"
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-slate-300 mb-2">
                       Name *
@@ -161,7 +161,7 @@ export function ContactSection({ className }: ContactProps) {
                       value={contactForm.name}
                       onChange={handleInputChange}
                       required
-                      className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-slate-500"
+                      className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-slate-500 h-10 sm:h-11"
                       placeholder="Your name"
                     />
                     {errors.name && (
@@ -178,7 +178,7 @@ export function ContactSection({ className }: ContactProps) {
                       value={contactForm.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-slate-500"
+                      className="bg-slate-700/50 border-slate-600 text-slate-100 focus:border-slate-500 h-10 sm:h-11"
                       placeholder="your.email@example.com"
                     />
                     {errors.email && (
@@ -222,9 +222,9 @@ export function ContactSection({ className }: ContactProps) {
                 </div>
                 
                 <Button 
-                  type="submit" 
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-slate-700 hover:bg-slate-600 text-slate-100 transition-colors"
+                  className="w-full bg-slate-700 hover:bg-slate-600 text-slate-100 transition-colors h-11 sm:h-12 text-base font-medium touch-manipulation"
                 >
                   {isSubmitting ? (
                     <>

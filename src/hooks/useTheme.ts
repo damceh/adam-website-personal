@@ -33,10 +33,12 @@ export function ThemeProvider(props: ThemeProviderProps) {
 
   // Listen for system theme changes
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     if (theme === 'system') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = () => setResolvedTheme(getResolvedTheme());
-      
+
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
     }

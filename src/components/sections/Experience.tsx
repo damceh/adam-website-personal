@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -36,12 +37,14 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
             >
               <Card className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-all duration-300 card-hover">
                 <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-slate-700 flex items-center justify-center flex-shrink-0 overflow-hidden">
                       {exp.logo ? (
-                        <img 
-                          src={exp.logo} 
+                        <Image
+                          src={exp.logo}
                           alt={`${exp.company} logo`}
+                          width={64}
+                          height={64}
                           className="w-full h-full object-contain p-2"
                         />
                       ) : (

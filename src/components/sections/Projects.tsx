@@ -26,7 +26,7 @@ export function ProjectsSection({ projects, className }: ProjectsProps) {
           Featured Projects
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

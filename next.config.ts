@@ -58,14 +58,13 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' web3forms.com",
               "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https: blob:",
+              "img-src 'self' data: https: http: blob:",
               "font-src 'self' data:",
               "connect-src 'self' web3forms.com api.web3forms.com",
               "frame-src 'none'",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self' web3forms.com",
-              "upgrade-insecure-requests",
             ].join('; '),
           },
         ],
@@ -89,16 +88,26 @@ const nextConfig: NextConfig = {
   compress: true,
   
   // Bundle analyzer (only in development)
-  ...(process.env.ANALYZE === 'true' && {
-    webpack: (config: any) => {
-      config.plugins.push(
-        new (require('@next/bundle-analyzer'))({
-          enabled: true,
-        })
-      );
+  ...(process.env.ANALYZE === 'true' ? {
+    webpack: (config: unknown, context: { dev: boolean; isServer: boolean }) => {
+      if (!context.dev && !context.isServer) {
+        const webpackConfig = config as { plugins: unknown[] };
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
+          const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+          webpackConfig.plugins.push(
+            new BundleAnalyzerPlugin({
+              analyzerMode: 'static',
+              openAnalyzer: false,
+            })
+          );
+        } catch (error) {
+          console.warn('Bundle analyzer not available:', error);
+        }
+      }
       return config;
     },
-  }),
+  } : {}),
 
   // Environment variables validation
   env: {
