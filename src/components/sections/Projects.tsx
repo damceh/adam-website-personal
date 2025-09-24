@@ -50,7 +50,7 @@ export function ProjectsSection({ projects, className }: ProjectsProps) {
                         </Badge>
                       )}
                       {project.status === 'in-progress' && (
-                        <Badge variant="outline" className="border-yellow-600 text-yellow-300">
+                        <Badge variant="secondary" className="bg-yellow-900/30 text-yellow-300 border-yellow-700">
                           In Progress
                         </Badge>
                       )}

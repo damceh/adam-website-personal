@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://adamalmahdi.com'),
   title: "Adam Almahdi",
-  description: "I blend my background in IT and performance marketing with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
+  description: "I blend my background in IT with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
   keywords: [
     "Adam Almahdi",
     "IT Specialist",
@@ -50,22 +50,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://adamalmahdi.com",
-    siteName: "Adam Almahdi Portfolio",
-    title: "Adam Almahdi - IT & Performance Marketing Specialist",
-    description: "I blend my background in IT and performance marketing with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
+    siteName: "Adam Almahdi",
+    title: "Adam Almahdi - IT Network & AI Automation",
+    description: "I blend my background in IT with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Adam Almahdi - IT & Performance Marketing Specialist",
+        alt: "Adam Almahdi - IT Network & AI Automation",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adam Almahdi - IT & Performance Marketing Specialist",
-    description: "I blend my background in IT and performance marketing with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
+    title: "Adam Almahdi - IT Network & AI Automation",
+    description: "I blend my background in IT with a deep passion for AI and web development. Whether it's building sales agents, automating workflows, or shaping my personal brand, I'm always creating systems that are equal parts functional and aesthetic.",
     images: ["/og-image.jpg"],
     creator: "@adamalmahdi",
   },

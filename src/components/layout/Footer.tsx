@@ -100,7 +100,7 @@ export function Footer({ className }: FooterProps) {
                 Adam Almahdi
               </h3>
               <p className="text-text-secondary text-sm leading-relaxed max-w-md">
-                IT & Performance Marketing Specialist passionate about AI, automation, 
+                IT & Network Engineer passionate about AI, automation, 
                 and creating systems that blend functionality with aesthetic design.
               </p>
             </motion.div>

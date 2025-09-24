@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-This document outlines the complete development plan for Adam Almahdi's personal portfolio website - a dark gothic/metal aesthetic site that showcases his expertise in IT, performance marketing, AI, and web development.
+This document outlines the complete development plan for Adam Almahdi's personal portfolio website - a dark gothic/metal aesthetic site that showcases his expertise in IT, marketing, AI, and web development.
 
 ## Project Goals
 
@@ -62,12 +62,12 @@ Portfolio Website
 ### Placeholder Content Structure
 1. **Profile Information**
    - Name: Adam Almahdi
-   - Title: IT & Performance Marketing Specialist
+   - Title: IT & AI Automation
    - Bio: Blend of IT, marketing, AI, and web development expertise
    - Professional headshot with gothic styling
 
 2. **Work Experience** (2-3 realistic entries)
-   - Senior Performance Marketing Manager (Current)
+   - IT Administrator (Current)
    - IT Specialist & Marketing Analyst (Previous)
    - Freelance projects and consulting work
 
