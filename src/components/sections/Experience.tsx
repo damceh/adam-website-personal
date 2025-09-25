@@ -1,10 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Calendar } from 'lucide-react';
+import { Calendar, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Experience } from '@/types';
 
 interface ExperienceProps {
@@ -12,11 +14,23 @@ interface ExperienceProps {
   className?: string;
 }
 
+const EXPERIENCES_TO_SHOW = 3;
+
 export function ExperienceSection({ experiences, className }: ExperienceProps) {
+  const [showAll, setShowAll] = useState(false);
+  
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
+  const experiencesToShow = showAll
+    ? experiences
+    : experiences.slice(0, EXPERIENCES_TO_SHOW);
+
   return (
     <section className={`py-16 px-6 ${className}`}>
       <div className="max-w-4xl mx-auto">
-        <motion.h2 
+        <motion.h2
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-100"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,14 +41,19 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
         </motion.h2>
         
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+          <AnimatePresence>
+            {experiencesToShow.map((exp, index) => (
+              <motion.div
+                key={exp.id}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{
+                  delay: showAll ? (index < EXPERIENCES_TO_SHOW ? index * 0.2 : 0.1) : index * 0.2,
+                  duration: 0.6
+                }}
+                viewport={{ once: true }}
+              >
               <Card className="bg-slate-800/30 border-slate-700 hover:bg-slate-800/50 transition-all duration-300 card-hover">
                 <CardContent className="p-6">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-4">
@@ -77,9 +96,9 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
                       {exp.technologies && exp.technologies.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-4">
                           {exp.technologies.map((tech) => (
-                            <Badge 
-                              key={tech} 
-                              variant="outline" 
+                            <Badge
+                              key={tech}
+                              variant="outline"
                               className="border-slate-600 text-slate-300 hover:border-slate-500 text-xs"
                             >
                               {tech}
@@ -123,6 +142,30 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
               </Card>
             </motion.div>
           ))}
+          </AnimatePresence>
+          
+          {/* Show More/Less Button */}
+          {experiences.length > EXPERIENCES_TO_SHOW && (
+            <div className="flex justify-center mt-8">
+              <Button
+                onClick={toggleShowAll}
+                variant="outline"
+                className="flex items-center gap-2 border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-slate-100"
+              >
+                {showAll ? (
+                  <>
+                    <ChevronUp className="w-4 h-4" />
+                    Show Less Experiences
+                  </>
+                ) : (
+                  <>
+                    <ChevronDown className="w-4 h-4" />
+                    Show All Experiences ({experiences.length - EXPERIENCES_TO_SHOW} more)
+                  </>
+                )}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
