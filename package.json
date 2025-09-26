@@ -7,7 +7,9 @@
     "dev:mobile": "next dev --turbopack --hostname 0.0.0.0 --port 3000",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:performance": "npm run build && npm start & sleep 3 && npx lighthouse http://localhost:3000 --output=json --output-path=tests/performance/reports/lighthouse-$(date +%Y-%m-%d-%H-%M-%S).json && pkill -f \"npm start\" || pkill -f \"next start\" || true",
+    "audit:mobile": "npm run build && npm start & sleep 3 && npx lighthouse http://localhost:3000 --output=json --output-path=tests/performance/reports/lighthouse-mobile-$(date +%Y-%m-%d-%H-%M-%S).json --form-factor=mobile --throttling-method=simulate && pkill -f \"npm start\" || pkill -f \"next start\" || true"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",

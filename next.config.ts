@@ -69,6 +69,15 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        source: '/_next/static/css/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ];
   },
 
@@ -119,7 +128,7 @@ const nextConfig: NextConfig = {
 
   // Webpack configuration
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle size
+    // Optimize bundle size with aggressive code splitting
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
@@ -128,15 +137,33 @@ const nextConfig: NextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
             enforce: true,
+            priority: 5,
+          },
+          framerMotion: {
+            test: /[\\/]node_modules[\\/]framer-motion/,
+            name: 'framer-motion',
+            chunks: 'all',
+            priority: 15,
+          },
+          lucideReact: {
+            test: /[\\/]node_modules[\\/]lucide-react/,
+            name: 'lucide-react',
+            chunks: 'all',
+            priority: 15,
           },
         },
       };
+
+      // Enable tree shaking and unused code elimination
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
     }
 
     // SVG handling
