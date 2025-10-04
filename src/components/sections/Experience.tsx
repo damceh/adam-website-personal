@@ -18,10 +18,23 @@ const EXPERIENCES_TO_SHOW = 3;
 
 export function ExperienceSection({ experiences, className }: ExperienceProps) {
   const [showAll, setShowAll] = useState(false);
+  const [expandedResponsibilities, setExpandedResponsibilities] = useState<Set<string>>(new Set());
   
   const toggleShowAll = () => {
     setShowAll(!showAll);
   };
+
+  const toggleResponsibilities = (id: string) => {
+    const newExpanded = new Set(expandedResponsibilities);
+    if (newExpanded.has(id)) {
+      newExpanded.delete(id);
+    } else {
+      newExpanded.add(id);
+    }
+    setExpandedResponsibilities(newExpanded);
+  };
+
+  const isExpanded = (id: string) => expandedResponsibilities.has(id);
 
   const experiencesToShow = showAll
     ? experiences
@@ -106,19 +119,48 @@ export function ExperienceSection({ experiences, className }: ExperienceProps) {
                           ))}
                         </div>
                       )}
-
+                    
                       {/* Responsibilities */}
                       {exp.responsibility && exp.responsibility.length > 0 && (
                         <div className="mt-4">
-                          <h4 className="text-sm font-medium text-slate-200 mb-2">Key Responsibilities:</h4>
-                          <ul className="space-y-1">
-                            {exp.responsibility.map((task, idx) => (
-                              <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                                <span className="text-slate-500 mt-1.5 flex-shrink-0">•</span>
-                                <span>{task}</span>
-                              </li>
-                            ))}
-                          </ul>
+                          <div className="flex items-center justify-between mb-2">
+                            <h4 className="text-sm font-medium text-slate-200">Key Responsibilities:</h4>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => toggleResponsibilities(exp.id)}
+                              className="h-6 w-6 p-0 text-slate-400 hover:text-slate-200"
+                            >
+                              {isExpanded(exp.id) ? (
+                                <ChevronUp className="w-4 h-4" />
+                              ) : (
+                                <ChevronDown className="w-4 h-4" />
+                              )}
+                            </Button>
+                          </div>
+                          <AnimatePresence>
+                            {isExpanded(exp.id) && (
+                              <motion.ul
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: 'auto' }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="space-y-1 overflow-hidden"
+                              >
+                                {exp.responsibility.map((task, idx) => (
+                                  <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
+                                    <span className="text-slate-500 mt-1.5 flex-shrink-0">•</span>
+                                    <span>{task}</span>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
+                          {!isExpanded(exp.id) && (
+                            <p className="text-xs text-slate-500 italic">
+                              {exp.responsibility.length} responsibilities - click to expand
+                            </p>
+                          )}
                         </div>
                       )}
 
